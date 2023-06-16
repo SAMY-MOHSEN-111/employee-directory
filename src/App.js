@@ -92,6 +92,9 @@ function Form({onAddEmployee, onShow, firstName, lastName, email, onSetFirstName
     function handleSave(e) {
         e.preventDefault();
 
+        // safe guard
+        if(!firstName || !lastName || !email) return;
+
         const newEmployee = {
             id: Date.now(),
             firstName: firstName,
